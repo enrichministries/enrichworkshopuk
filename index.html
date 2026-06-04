@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrich UK 2026 | Worship Music Workshop</title>
+    
+    <!-- Open Graph Meta Tags for Social Previews -->
+    <meta property="og:title" content="Enrich UK 2026 | Worship Music Workshop">
+    <meta property="og:description" content="A 10-Day Worship and Music Camp in London. Level Up. Lead Bold. Learn Worship.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:alt" content="Enrich UK 2026 Worship Workshop London">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://enrichministries.github.io/enrich2026/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enrich Ministries UK">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Playfair Display (Classic Headings), Open Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ukDark: '#050b14',      /* Very Deep Navy/Black Background */
+                        ukCard: '#0d1829',      /* Dark Navy Cards */
+                        ukRed: '#C8102E',       /* Union Jack Red */
+                        ukBlue: '#012169',      /* Union Jack Blue */
+                        gold: '#D4AF37',        /* Royal Gold Accent */
+                        muted: '#9CA3AF',       /* Light Gray Body Text */
+                        white: '#FFFFFF',       /* Headings */
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Open Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 5s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.4)' },
+                            '50%': { boxShadow: '0 0 40px rgba(212, 175, 55, 0.8)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050b14;
+            color: #9CA3AF;
+            overflow-x: hidden;
+        }
+
+        /* UK Themed Hero Gradient Background (London Skyline) */
+        .hero-music-bg {
+            background: 
+                radial-gradient(circle at 15% 30%, rgba(200, 16, 46, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 85% 70%, rgba(1, 33, 105, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(5, 11, 20, 0.7) 0%, transparent 70%),
+                url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+            background-blend-mode: overlay;
+        }
+
+        /* Royal Gradient Text */
+        .text-uk-gradient {
+            background: linear-gradient(to right, #C8102E, #D4AF37, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-x 6s linear infinite;
+        }
+
+        /* Dynamic Primary Gradient Button */
+        .btn-uk-primary {
+            background: linear-gradient(90deg, #012169, #C8102E);
+            background-size: 200% auto;
+            color: #FFFFFF;
+            transition: 0.5s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .btn-uk-primary:hover {
+            background-position: right center;
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.6);
+            color: #FFFFFF;
+            transform: scale(1.02);
+            border-color: #D4AF37;
+        }
+
+        /* Gold Action Button */
+        .btn-action-gold {
+            background: linear-gradient(135deg, #D4AF37, #AA8C2C);
+            color: #050b14;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-action-gold:hover {
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Music Track Cards */
+        .music-track-card {
+            background-color: #0d1829;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .music-track-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #C8102E, #012169);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .music-track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(200, 16, 46, 0.15), 0 10px 20px -5px rgba(1, 33, 105, 0.2);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .music-track-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050b14; }
+        ::-webkit-scrollbar-thumb { background: #0d1829; border-radius: 4px; border: 1px solid #012169; }
+        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
+        
+        /* Album/Setlist Item Hover */
+        .setlist-item {
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        .setlist-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-left-color: #C8102E;
+            transform: translateX(5px);
+        }
+
+        /* Modal Styles */
+        .modal-card {
+            background-color: #050b14;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 60px rgba(0,0,0,0.9), 0 0 30px rgba(1, 33, 105, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-ukRed selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-ukDark/90 backdrop-blur-xl border-b border-white/5 top-0 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center relative z-10">
+            <!-- Branding (Updated to UK) -->
+            <div class="flex items-center space-x-3 cursor-pointer shrink-0">
+                <div class="h-8 w-8 md:h-10 md:w-10 rounded-xl border border-gold/40 bg-ukCard flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)] shrink-0">
+                    <!-- Generic Crown/Royal Placeholder for UK feel -->
+                    <img src="https://images.unsplash.com/photo-1601915998188-f54f7a2d8eeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Crown Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-sans text-lg md:text-xl font-bold text-white tracking-widest leading-none uppercase">Enrich <span class="text-ukRed text-[10px] md:text-xs uppercase ml-1 font-black">UK '26</span></span>
+                </div>
+            </div>
+
+            <!-- Right Elements Container -->
+            <div class="flex items-center gap-4 md:gap-8">
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <div class="flex space-x-8 font-sans text-sm font-bold uppercase tracking-widest items-center text-muted">
+                        <a href="#home" class="hover:text-gold transition duration-300">Overview</a>
+                        <a href="#vault" class="hover:text-ukRed transition duration-300">Tracks</a>
+                        <a href="#playlist" class="hover:text-ukBlue transition duration-300">Programme</a>
+                        <a href="#details" class="hover:text-gold transition duration-300">Venue</a>
+                    </div>
+                    <a href="https://forms.gle/Szmp68tpVU1uBZGg8" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 btn-action-gold font-sans text-sm font-bold tracking-widest rounded-full uppercase shrink-0">
+                        Register Now
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-muted hover:text-gold focus:outline-none text-2xl p-2 shrink-0">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ukDark/95 backdrop-blur-3xl border-t border-white/5 fixed inset-0 top-[64px] h-[calc(100dvh-64px)] flex flex-col pt-8 px-6 gap-6 z-40 overflow-y-auto pb-10">
+            <a href="#home" class="text-xl font-display font-bold text-white hover:text-gold transition border-b border-white/5 pb-4">Overview</a>
+            <a href="#vault" class="text-xl font-display font-bold text-white hover:text-ukRed transition border-b border-white/5 pb-4">Tracks</a>
+            <a href="#playlist" class="text-xl font-display font-bold text-white hover:text-ukBlue transition border-b border-white/5 pb-4">Programme</a>
+            <a href="#details" class="text-xl font-display font-bold text-white hover:text-gold transition border-b border-white/5 pb-4">Venue & Info</a>
+            <a href="https://forms.gle/Szmp68tpVU1uBZGg8" target="_blank" rel="noopener noreferrer" class="mt-4 px-8 py-4 btn-action-gold text-center uppercase font-sans text-lg font-bold tracking-widest rounded-full shadow-lg">
+                Register Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-music-bg min-h-[100dvh] flex flex-col justify-center overflow-hidden pt-20 relative">
+        <!-- Overlay to ensure text readability -->
+        <div class="absolute inset-0 bg-ukDark/80 z-0"></div>
+
+        <div class="container mx-auto px-4 lg:px-12 relative z-10 flex flex-col items-center text-center mt-10">
+            
+            <!-- Music Pill Badge -->
+            <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2 rounded-full border border-gold/30 bg-ukBlue/40 backdrop-blur-md text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-6 md:mb-8 shadow-[0_0_20px_rgba(212,175,55,0.15)]">
+                <i class="fas fa-music text-gold animate-pulse"></i>
+                London Worship Intensive
+            </div>
+            
+            <!-- Main Title (Responsive Sizing) -->
+            <h1 data-aos="zoom-in" data-aos-duration="1000" class="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-display font-black uppercase tracking-tighter leading-none mb-4 drop-shadow-2xl">
+                <span class="text-white">ENRICH</span> <span class="text-uk-gradient block md:inline">UK 2026</span>
+            </h1>
+            
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg sm:text-xl md:text-2xl font-body text-muted max-w-2xl mx-auto mb-10 leading-relaxed px-2">
+                Forge the next generation of worship musicians in the heart of the UK. <br>
+                <span class="text-white font-semibold mt-2 inline-block">Level Up. Lead Bold. Learn Worship. 🇬🇧</span>
+            </p>
+            
+            <!-- CTAs -->
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row items-center gap-4 md:gap-5 mb-12 md:mb-16 w-full sm:w-auto px-4">
+                <a href="https://forms.gle/Szmp68tpVU1uBZGg8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 btn-uk-primary font-sans font-bold text-xs md:text-sm uppercase tracking-widest rounded-full shadow-xl flex items-center justify-center gap-2">
+                    Secure Your Place <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#vault" class="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 border border-white/20 text-white hover:border-gold hover:text-gold transition-colors font-sans font-bold text-xs md:text-sm uppercase tracking-widest rounded-full flex items-center justify-center gap-2 bg-ukDark/50 backdrop-blur-sm">
+                    Explore Tracks
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- The Tracks (Vault) -->
+    <section id="vault" class="py-16 md:py-24 relative border-t border-white/5 bg-gradient-to-b from-ukDark to-ukCard/50">
+        <div class="container mx-auto px-4 lg:px-12">
+            
+            <div data-aos="fade-up" class="mb-12 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
+                <div>
+                    <p class="font-sans font-bold text-ukRed text-xs md:text-sm uppercase tracking-[0.2em] mb-2">// Select Your Discipline</p>
+                    <h2 class="text-3xl sm:text-4xl md:text-6xl font-display font-black text-white uppercase tracking-tight">
+                        Programme <span class="text-gold">Tracks.</span>
+                    </h2>
+                </div>
+                <p class="text-muted font-body text-sm sm:text-base md:text-lg max-w-sm">Hands-on mastery, intensive band labs, and transformative live encounters. Required age: 13+</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+                
+                <!-- Guitar -->
+                <div data-aos="fade-up" data-aos-delay="100" onclick="openGuitarModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(200,16,46,0.4)]">
+                        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=200&h=200&q=80" alt="Guitar Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Guitar</h3>
+                    <p class="text-muted font-body text-sm md:text-base leading-relaxed flex-grow">Master modern worship vibes. Focus on chord voicing, fingerstyle, and lead lines.</p>
+                    <div class="mt-4 md:mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-muted group-hover:text-white transition-colors">
+                        <span>View Course</span> <i class="fas fa-play text-ukRed"></i>
+                    </div>
+                </div>
+
+                <!-- Keyboard -->
+                <div data-aos="fade-up" data-aos-delay="200" onclick="openKeysModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        <img src="https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=200&h=200&q=80" alt="Keyboard Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Keys</h3>
+                    <p class="text-muted font-body text-sm md:text-base leading-relaxed flex-grow">Unlock progressions, padding, layering sounds, and the art of prophetic flow.</p>
+                    <div class="mt-4 md:mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-muted group-hover:text-white transition-colors">
+                        <span>View Course</span> <i class="fas fa-play text-gold"></i>
+                    </div>
+                </div>
+
+                <!-- Drums -->
+                <div data-aos="fade-up" data-aos-delay="300" onclick="openDrumsModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(1,33,105,0.4)]">
+                        <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=200&h=200&q=80" alt="Drums Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Drums</h3>
+                    <p class="text-muted font-body text-sm md:text-base leading-relaxed flex-grow">Find the pocket. Understand dynamics, groove, and patterns that drive the song.</p>
+                    <div class="mt-4 md:mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-muted group-hover:text-white transition-colors">
+                        <span>View Course</span> <i class="fas fa-play text-ukBlue"></i>
+                    </div>
+                </div>
+
+                <!-- Vocals -->
+                <div data-aos="fade-up" data-aos-delay="400" onclick="openVocalsModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(200,16,46,0.4)]">
+                        <img src="https://images.unsplash.com/photo-1433622070098-754fdf81c929?auto=format&fit=crop&w=200&h=200&q=80" alt="Vocals Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Vocals</h3>
+                    <p class="text-muted font-body text-sm md:text-base leading-relaxed flex-grow">Breath control, harmony, range expansion, and carrying the heart of a minister.</p>
+                    <div class="mt-4 md:mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-muted group-hover:text-white transition-colors">
+                        <span>View Course</span> <i class="fas fa-play text-ukRed"></i>
+                    </div>
+                </div>
+
+                <!-- Media -->
+                <div data-aos="fade-up" data-aos-delay="500" onclick="openMediaModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=200&h=200&q=80" alt="Media Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Media</h3>
+                    <p class="text-muted font-body text-sm md:text-base leading-relaxed flex-grow">Master Sunday mixing, recording, stage setup & live streaming.</p>
+                    <div class="mt-4 md:mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-muted group-hover:text-white transition-colors">
+                        <span>View Course</span> <i class="fas fa-play text-gold"></i>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Curriculum / Setlist -->
+    <section id="playlist" class="py-16 md:py-24 bg-ukCard relative border-y border-white/5 shadow-2xl">
+        <div class="container mx-auto px-4 lg:px-12">
+            
+            <div data-aos="fade-up" class="mb-12 md:mb-16 text-center">
+                <p class="font-sans font-bold text-gold text-sm uppercase tracking-[0.2em] mb-2">// The Syllabus</p>
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-display font-black text-white uppercase tracking-tight">
+                    Deep Dive <span class="text-uk-gradient">Programme</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                
+                <!-- ALBUM 1: MUSIC THEORY -->
+                <div data-aos="fade-right" class="bg-ukDark border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 md:mb-8 border-b border-white/10 pb-6 gap-4">
+                        <div class="flex items-center gap-4 md:gap-5">
+                            <div class="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-ukRed to-ukBlue flex items-center justify-center text-xl md:text-2xl text-white shadow-lg shrink-0 border border-white/10">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-3xl font-display font-black text-white tracking-tight">Theory & Mastery</h3>
+                                <p class="text-xs md:text-sm font-sans font-bold text-ukRed tracking-widest mt-1 uppercase">EP • 5 Modules</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-ukRed">01</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-gold transition-colors">Fundamentals & Scales</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Intro, Major Scale Formation, Minor Scales.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-ukRed transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-ukRed">02</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-gold transition-colors">Chords & Harmony</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Triads, Sevenths, Suspended, Complex Formations.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-ukRed transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-ukRed">03</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-gold transition-colors">Chord Progressions</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Roman Numeral Analysis (I-IV-V, etc.), Technical Terms.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-ukRed transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-ukRed">04</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-gold transition-colors">Rhythm & Application</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Time Signatures, Groove, Chord Colours.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-ukRed transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-ukRed">05</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-gold transition-colors">Playing Worship Songs</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Working as a unified band, Musicianship, Practice habits.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-ukRed transition-colors text-sm md:text-base"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALBUM 2: WORSHIP LEADERSHIP -->
+                <div data-aos="fade-left" class="bg-ukDark border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 md:mb-8 border-b border-white/10 pb-6 gap-4">
+                        <div class="flex items-center gap-4 md:gap-5">
+                            <div class="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-gold to-ukBlue flex items-center justify-center text-xl md:text-2xl text-ukDark shadow-lg shrink-0 border border-white/10">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-3xl font-display font-black text-white tracking-tight">Worship Leadership</h3>
+                                <p class="text-xs md:text-sm font-sans font-bold text-gold tracking-widest mt-1 uppercase">LP • 10 Modules</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 h-[300px] md:h-[340px] overflow-y-auto pr-2">
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">01</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">Worship Vision</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Core purpose, biblical foundation, prophetic direction.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">02</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">Lifestyle of a Worshipper</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Intimacy with God, public ministry from private devotion.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">03</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">Realm of the Spirit</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Sensing movement, discerning atmosphere, flowing.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">04</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">The Leader's Role</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Shepherd, priest, and musical director.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">05</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">Spirit, Word & Worship</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Balancing theological depth with spiritual vitality.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4 setlist-item p-2 md:p-3 rounded-lg group">
+                            <span class="text-white/30 font-display font-bold text-lg md:text-xl w-8 md:w-10 text-right group-hover:text-gold">06</span>
+                            <div class="flex-grow">
+                                <h4 class="font-sans font-bold text-white text-sm md:text-base tracking-wide group-hover:text-ukRed transition-colors">Local Church Ministry</h4>
+                                <p class="text-muted text-xs md:text-sm font-body mt-0.5 md:mt-1">Recruitment, training, discipleship, team culture.</p>
+                            </div>
+                            <i class="fas fa-play text-white/10 group-hover:text-gold transition-colors text-sm md:text-base"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics Banner -->
+    <section id="details" class="py-16 md:py-24 relative bg-ukDark scroll-mt-20 overflow-hidden">
+        <!-- Abstract gradient blob -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[300px] bg-ukRed/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 lg:px-12 relative z-10">
+            <div data-aos="zoom-in" class="max-w-5xl mx-auto border border-white/10 bg-ukCard rounded-3xl overflow-hidden shadow-2xl relative">
+                <!-- Glowing edge -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-ukRed via-gold to-ukBlue"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    
+                    <!-- Left: Details -->
+                    <div class="p-6 sm:p-8 md:p-10 md:col-span-2 border-b md:border-b-0 md:border-r border-white/10">
+                        <p class="font-sans font-bold text-gold text-sm uppercase tracking-[0.2em] mb-4">// Join the Experience</p>
+                        <h3 class="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tighter uppercase mb-6 md:mb-8">Workshop <span class="text-ukRed">Dates & Venue</span></h3>
+                        
+                        <div class="space-y-6 md:space-y-8">
+                            <!-- Date -->
+                            <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-5">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-ukDark flex items-center justify-center text-gold shrink-0 border border-white/5 shadow-inner">
+                                    <i class="far fa-calendar-alt text-lg md:text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-lg md:text-xl">August 17 (Mon) – August 22 (Sat)</p>
+                                    <p class="text-muted text-sm md:text-base font-body mt-1">6 Days Intensive Workshop</p>
+                                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gold text-xs md:text-sm hover:text-white transition-colors inline-flex items-center gap-2 mt-3 font-bold uppercase tracking-widest border border-gold/30 px-3 py-1 rounded-full">
+                                        <i class="far fa-calendar-plus"></i> Add to Calendar
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Location -->
+                            <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-5">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-ukDark flex items-center justify-center text-ukBlue shrink-0 border border-white/5 shadow-inner">
+                                    <i class="fas fa-map-marker-alt text-lg md:text-xl text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-lg md:text-xl">Blencathra Center</p>
+                                    <p class="text-muted text-sm md:text-base font-body mt-1">Cumbria, United Kingdom</p>
+                                    <a href="https://www.google.com/maps/search/Blencathra+Center,+Cumbria,+United+Kingdom" target="_blank" rel="noopener noreferrer" class="text-white text-xs md:text-sm hover:text-gold transition-colors inline-flex items-center gap-2 mt-3 font-bold uppercase tracking-widest border border-white/30 px-3 py-1 rounded-full">
+                                        View on Maps <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Pricing/Payment Embed (UK Adjusted) -->
+                    <div class="p-6 md:p-8 flex flex-col justify-center items-center text-center bg-[#FFFFFF] relative overflow-hidden border-t md:border-t-0 md:border-l border-[#BDC1C6]">
+                        <div class="relative z-10 w-full flex flex-col items-center">
+                            
+                            <h2 class="text-xl md:text-2xl font-display font-black text-[#012169] tracking-tight mb-1">🎶 WORKSHOP FEE</h2>
+                            <p class="text-[#3C4043] font-bold text-sm md:text-base uppercase tracking-widest mb-4">Payment Details</p>
+                            
+                            <!-- Changed to GBP -->
+                            <p class="text-3xl md:text-4xl font-display font-black text-[#C8102E] tracking-tighter mb-1 drop-shadow-sm">£200.00</p>
+                            <p class="text-[#3C4043] text-xs md:text-sm font-bold mb-3">(Accommodation + Meals included)</p>
+                            
+                            <!-- UK Bank Details Instead of UPI -->
+                            <div class="bg-gray-50 py-2 px-4 rounded-xl border border-[#BDC1C6] mb-5 md:mb-6 w-full max-w-[220px]">
+                                <p class="text-[#3C4043] text-[11px] font-bold uppercase tracking-wider mb-1 text-left border-b border-gray-200 pb-1">Bank Transfer Details</p>
+                                <p class="text-[#3C4043] text-[10px] text-left mt-1">Name: <strong class="float-right text-[#012169]">Sujith Eapen Mathew</strong></p>
+                                <p class="text-[#3C4043] text-[10px] text-left mt-1">Sort Code: <strong class="float-right text-[#012169]">30-84-58</strong></p>
+                                <p class="text-[#3C4043] text-[10px] text-left">Account: <strong class="float-right text-[#012169]">48908168</strong></p>
+                            </div>
+                            
+                            <!-- Card / Apple Pay Button -->
+                            <a href="https://forms.gle/Szmp68tpVU1uBZGg8" 
+                               class="w-full h-[50px] md:h-[56px] mb-4 bg-[#000000] text-[#FFFFFF] font-body text-base md:text-lg font-medium rounded-full flex items-center justify-center shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_15px_rgba(0,0,0,0.5)] hover:-translate-y-1 transition-all duration-300 border border-[#BDC1C6]" 
+                               target="_blank">
+                                Pay via <i class="fa-brands fa-apple text-[20px] md:text-[24px] ml-2 mr-1"></i> Pay
+                            </a>
+                            
+                            <!-- WhatsApp Share Button -->
+                            <a href="https://api.whatsapp.com/send?phone=447399144880&text=I've%20registered%20for%20ENRICH%20UK%202026!" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="w-full h-[44px] md:h-[48px] bg-[#34A853] text-[#FFFFFF] font-sans font-bold text-xs md:text-sm uppercase tracking-widest rounded-full flex items-center justify-center shadow-[0_4px_10px_rgba(52,168,83,0.3)] hover:shadow-[0_6px_15px_rgba(52,168,83,0.5)] hover:-translate-y-1 transition-all duration-300">
+                                <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> Share on WhatsApp
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Footer / Contact -->
+    <footer class="py-12 md:py-16 bg-ukCard border-t border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="container mx-auto px-4 lg:px-12 text-center relative z-10">
+            
+            <div class="mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white uppercase tracking-tighter mb-4 md:mb-6">
+                    Ready to <span class="text-gold">Serve?</span>
+                </h2>
+                <a href="https://forms.gle/Szmp68tpVU1uBZGg8" target="_blank" rel="noopener noreferrer" class="inline-block px-8 md:px-10 py-3 md:py-4 btn-uk-primary font-sans font-bold text-xs md:text-sm uppercase tracking-widest rounded-full transition-all shadow-xl">
+                    Book Your Place - Click Here
+                </a>
+            </div>
+            
+            <div class="w-full max-w-5xl mx-auto border-t border-white/10 pt-10 md:pt-12">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 gap-4">
+                    <p class="font-sans font-bold text-muted text-xs md:text-sm uppercase tracking-[0.2em]">Direct Contacts</p>
+                    <a href="mailto:enrichuk26@gmail.com" class="text-gold hover:text-white transition-colors flex items-center gap-2 font-bold text-sm md:text-base bg-ukDark/50 px-4 py-2 rounded-full border border-white/5"><i class="fas fa-envelope"></i> enrichuk26@gmail.com</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-6 md:gap-8 text-sm font-body">
+                    
+                    <div class="flex flex-col items-center bg-ukDark/50 sm:bg-transparent p-4 sm:p-0 rounded-lg">
+                        <span class="text-white font-bold text-sm md:text-base mb-1">Ps. Tiju Thomas</span>
+                        <span class="text-ukRed text-[11px] md:text-xs uppercase font-bold tracking-wider mb-2">Coordinator</span>
+                        <a href="https://wa.me/447399144880" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-white transition flex items-center gap-1.5"><i class="fab fa-whatsapp text-[#25D366] text-base"></i> +44 7399 144880</a>
+                    </div>
+                    
+                    <div class="flex flex-col items-center bg-ukDark/50 sm:bg-transparent p-4 sm:p-0 rounded-lg">
+                        <span class="text-white font-bold text-sm md:text-base mb-1">Br. Sujit Eapen</span>
+                        <span class="text-gold text-[11px] md:text-xs uppercase font-bold tracking-wider mb-2">Coordinator</span>
+                        <a href="https://wa.me/447411425821" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-white transition flex items-center gap-1.5"><i class="fab fa-whatsapp text-[#25D366] text-base"></i> +44 7411 425821</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] text-muted/60 font-sans uppercase tracking-widest font-bold">
+                <span>&copy; 2026 Enrich Ministries UK.</span>
+                <span>Built for the next generation.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals (Guitar, Keys, Drums, Vocals, Media) -->
+
+    <!-- Guitar Modal -->
+    <div id="guitarModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ukDark/95 backdrop-blur-md transition-opacity duration-300 p-0 md:p-6">
+        <div class="modal-card rounded-none md:rounded-3xl w-full h-[100dvh] md:h-[90vh] max-w-7xl flex flex-col relative transform scale-95 opacity-0 transition-all duration-300" id="guitarCard">
+            <button onclick="closeGuitarModal()" class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-gold text-lg md:text-xl transition-all z-20 bg-ukCard/90 border border-white/10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-times"></i></button>
+            <div class="w-full h-full flex-grow bg-ukDark relative md:rounded-2xl overflow-hidden pt-14 md:pt-0">
+                <iframe src="https://gamma.app/embed/fgwxmudh9zlyij6" class="absolute inset-0 w-full h-full border-none" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keys Modal -->
+    <div id="keysModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ukDark/95 backdrop-blur-md transition-opacity duration-300 p-0 md:p-6">
+        <div class="modal-card rounded-none md:rounded-3xl w-full h-[100dvh] md:h-[90vh] max-w-7xl flex flex-col relative transform scale-95 opacity-0 transition-all duration-300" id="keysCard">
+            <button onclick="closeKeysModal()" class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-gold text-lg md:text-xl transition-all z-20 bg-ukCard/90 border border-white/10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-times"></i></button>
+            <div class="w-full h-full flex-grow bg-ukDark relative md:rounded-2xl overflow-hidden pt-14 md:pt-0">
+                <iframe src="https://gamma.app/embed/6tumr3vt5418fn5" class="absolute inset-0 w-full h-full border-none" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drums Modal -->
+    <div id="drumsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ukDark/95 backdrop-blur-md transition-opacity duration-300 p-0 md:p-6">
+        <div class="modal-card rounded-none md:rounded-3xl w-full h-[100dvh] md:h-[90vh] max-w-7xl flex flex-col relative transform scale-95 opacity-0 transition-all duration-300" id="drumsCard">
+            <button onclick="closeDrumsModal()" class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-gold text-lg md:text-xl transition-all z-20 bg-ukCard/90 border border-white/10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-times"></i></button>
+            <div class="w-full h-full flex-grow bg-ukDark relative md:rounded-2xl overflow-hidden pt-14 md:pt-0">
+                <iframe src="https://gamma.app/embed/z9t3zc93jjl5ar1" class="absolute inset-0 w-full h-full border-none" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vocals Modal -->
+    <div id="vocalsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ukDark/95 backdrop-blur-md transition-opacity duration-300 p-0 md:p-6">
+        <div class="modal-card rounded-none md:rounded-3xl w-full h-[100dvh] md:h-[90vh] max-w-7xl flex flex-col relative transform scale-95 opacity-0 transition-all duration-300" id="vocalsCard">
+            <button onclick="closeVocalsModal()" class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-gold text-lg md:text-xl transition-all z-20 bg-ukCard/90 border border-white/10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-times"></i></button>
+            <div class="w-full h-full flex-grow bg-ukDark relative md:rounded-2xl overflow-hidden pt-14 md:pt-0">
+                <iframe src="https://gamma.app/embed/2vk3s6nfi3l1lmq" class="absolute inset-0 w-full h-full border-none" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Media Modal -->
+    <div id="mediaModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ukDark/95 backdrop-blur-md transition-opacity duration-300 p-0 md:p-6">
+        <div class="modal-card rounded-none md:rounded-3xl w-full h-[100dvh] md:h-[90vh] max-w-7xl flex flex-col relative transform scale-95 opacity-0 transition-all duration-300" id="mediaCard">
+            <button onclick="closeMediaModal()" class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-gold text-lg md:text-xl transition-all z-20 bg-ukCard/90 border border-white/10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-times"></i></button>
+            <div class="w-full h-full flex-grow bg-ukDark relative md:rounded-2xl overflow-hidden pt-14 md:pt-0">
+                <iframe src="https://gamma.app/embed/sobul0p9e9yh4em" class="absolute inset-0 w-full h-full border-none" allow="fullscreen" title="Worship Media Production"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Modal Logic functions
+        function openModal(modalId, cardId) {
+            const modal = document.getElementById(modalId);
+            const card = document.getElementById(cardId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal(modalId, cardId) {
+            const modal = document.getElementById(modalId);
+            const card = document.getElementById(cardId);
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scroll
+            }, 300);
+        }
+
+        function openGuitarModal() { openModal('guitarModal', 'guitarCard'); }
+        function closeGuitarModal() { closeModal('guitarModal', 'guitarCard'); }
+        
+        function openKeysModal() { openModal('keysModal', 'keysCard'); }
+        function closeKeysModal() { closeModal('keysModal', 'keysCard'); }
+        
+        function openDrumsModal() { openModal('drumsModal', 'drumsCard'); }
+        function closeDrumsModal() { closeModal('drumsModal', 'drumsCard'); }
+        
+        function openVocalsModal() { openModal('vocalsModal', 'vocalsCard'); }
+        function closeVocalsModal() { closeModal('vocalsModal', 'vocalsCard'); }
+        
+        function openMediaModal() { openModal('mediaModal', 'mediaCard'); }
+        function closeMediaModal() { closeModal('mediaModal', 'mediaCard'); }
+
+        // Close modals on outside click
+        window.addEventListener('click', (e) => {
+            const modals = ['guitarModal', 'keysModal', 'drumsModal', 'vocalsModal', 'mediaModal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (e.target === modal) {
+                    closeModal(id, id.replace('Modal', 'Card'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
