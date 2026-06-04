@@ -37,7 +37,7 @@
                     colors: {
                         ukDark: '#050b14',      /* Very Deep Navy/Black Background */
                         ukCard: '#0d1829',      /* Dark Navy Cards */
-                        ukRed: '#C8102E',       /* Union Jack Red */
+                        ukRed: '#990000',       /* Darker Union Jack Red */
                         ukBlue: '#012169',      /* Union Jack Blue */
                         gold: '#D4AF37',        /* Royal Gold Accent */
                         muted: '#9CA3AF',       /* Light Gray Body Text */
@@ -87,7 +87,7 @@
         /* UK Themed Hero Gradient Background (London Skyline) */
         .hero-music-bg {
             background: 
-                radial-gradient(circle at 15% 30%, rgba(200, 16, 46, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 15% 30%, rgba(153, 0, 0, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 85% 70%, rgba(1, 33, 105, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(5, 11, 20, 0.7) 0%, transparent 70%),
                 url('image_30d720.jpg') center/cover fixed;
@@ -96,16 +96,26 @@
 
         /* Royal Gradient Text */
         .text-uk-gradient {
-            background: linear-gradient(to right, #C8102E, #D4AF37, #FFFFFF);
+            background: linear-gradient(to right, #990000, #D4AF37, #FFFFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
             animation: gradient-x 6s linear infinite;
         }
 
+        /* UK Flag Gradient Text */
+        .text-uk-flag-gradient {
+            background: linear-gradient(to right, #990000, #FFFFFF, #012169, #990000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-x 8s linear infinite;
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
+        }
+
         /* Dynamic Primary Gradient Button */
         .btn-uk-primary {
-            background: linear-gradient(90deg, #012169, #C8102E);
+            background: linear-gradient(90deg, #012169, #990000);
             background-size: 200% auto;
             color: #FFFFFF;
             transition: 0.5s;
@@ -113,7 +123,7 @@
         }
         .btn-uk-primary:hover {
             background-position: right center;
-            box-shadow: 0 0 20px rgba(200, 16, 46, 0.6);
+            box-shadow: 0 0 20px rgba(153, 0, 0, 0.6);
             color: #FFFFFF;
             transform: scale(1.02);
             border-color: #D4AF37;
@@ -143,13 +153,13 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, #C8102E, #012169);
+            background: linear-gradient(90deg, #990000, #012169);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .music-track-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(200, 16, 46, 0.15), 0 10px 20px -5px rgba(1, 33, 105, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(153, 0, 0, 0.15), 0 10px 20px -5px rgba(1, 33, 105, 0.2);
             border-color: rgba(212, 175, 55, 0.3);
         }
         .music-track-card:hover::before {
@@ -160,7 +170,7 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050b14; }
         ::-webkit-scrollbar-thumb { background: #0d1829; border-radius: 4px; border: 1px solid #012169; }
-        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
+        ::-webkit-scrollbar-thumb:hover { background: #990000; }
         
         /* Album/Setlist Item Hover */
         .setlist-item {
@@ -169,7 +179,7 @@
         }
         .setlist-item:hover {
             background: rgba(255, 255, 255, 0.03);
-            border-left-color: #C8102E;
+            border-left-color: #990000;
             transform: translateX(5px);
         }
 
@@ -246,7 +256,7 @@
             
             <!-- Main Title (Responsive Sizing) -->
             <h1 data-aos="zoom-in" data-aos-duration="1000" class="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-display font-black uppercase tracking-tighter leading-none mb-4 drop-shadow-2xl">
-                <span class="text-white">ENRICH</span> <span class="text-uk-gradient block md:inline">UK 2026</span>
+                <span class="text-uk-flag-gradient block md:inline">ENRICH UK</span> <span class="text-uk-gradient block md:inline">2026</span>
             </h1>
             
             <p data-aos="fade-up" data-aos-delay="200" class="text-lg sm:text-xl md:text-2xl font-body text-muted max-w-2xl mx-auto mb-10 leading-relaxed px-2">
@@ -285,7 +295,7 @@
                 
                 <!-- Guitar -->
                 <div data-aos="fade-up" data-aos-delay="100" onclick="openGuitarModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(200,16,46,0.4)]">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(153,0,0,0.4)]">
                         <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=200&h=200&q=80" alt="Guitar Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
                     </div>
                     <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Guitar</h3>
@@ -321,7 +331,7 @@
 
                 <!-- Vocals -->
                 <div data-aos="fade-up" data-aos-delay="400" onclick="openVocalsModal()" class="music-track-card p-6 lg:p-8 rounded-2xl cursor-pointer group flex flex-col h-full shadow-lg">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(200,16,46,0.4)]">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-transparent bg-gradient-to-tr from-ukBlue via-ukRed to-gold p-[2px] overflow-hidden mb-4 md:mb-6 shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(153,0,0,0.4)]">
                         <img src="https://images.unsplash.com/photo-1433622070098-754fdf81c929?auto=format&fit=crop&w=200&h=200&q=80" alt="Vocals Track" class="w-full h-full object-cover rounded-full border-4 border-ukCard group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
                     </div>
                     <h3 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide mb-2 md:mb-3 group-hover:text-gold transition-colors">Vocals</h3>
@@ -531,7 +541,7 @@
                             <p class="text-[#3C4043] font-bold text-sm md:text-base uppercase tracking-widest mb-4">Payment Details</p>
                             
                             <!-- Changed to GBP -->
-                            <p class="text-3xl md:text-4xl font-display font-black text-[#C8102E] tracking-tighter mb-1 drop-shadow-sm">£200.00</p>
+                            <p class="text-3xl md:text-4xl font-display font-black text-[#990000] tracking-tighter mb-1 drop-shadow-sm">£200.00</p>
                             <p class="text-[#3C4043] text-xs md:text-sm font-bold mb-3">(Accommodation + Meals included)</p>
                             
                             <!-- UK Bank Details Instead of UPI -->
